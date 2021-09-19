@@ -9,33 +9,39 @@
 </head>
 
 <body>
-  <div class="app">
+  <header class="header">
+    <div class="header__branding">
+      <img src="/images/mdr.svg" alt="MDResume" height="40" width="40">
+      <p>MDResume</p>
+    </div>
+    <div class="header__controls">
+      <button class="icon-btn rendered__download" aria-label="Download" role="tooltip"
+              data-microtip-position="bottom-left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path fill="currentColor"
+                d="M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z" />
+        </svg>
+      </button>
+      <button class="icon-btn rendered__print" aria-label="Print to PDF" role="tooltip"
+              data-microtip-position="bottom-left">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+          <path fill="none" d="M0 0h24v24H0z" />
+          <path fill="currentColor"
+                d="M6 19H3a1 1 0 01-1-1V8a1 1 0 011-1h3V3a1 1 0 011-1h10a1 1 0 011 1v4h3a1 1 0 011 1v10a1 1 0 01-1 1h-3v2a1 1 0 01-1 1H7a1 1 0 01-1-1v-2zm0-2v-1a1 1 0 011-1h10a1 1 0 011 1v1h2V9H4v8h2zM8 4v3h8V4H8zm0 13v3h8v-3H8zm-3-7h3v2H5v-2z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+  <main class="app">
     <section class="app__markdown">
       <div id="markdown">
       </div>
     </section>
     <section class="app__rendered rendered">
-      <header>
-        <button class="icon-btn rendered__download" aria-label="Download" role="tooltip"
-                data-microtip-position="bottom-left">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path fill="currentColor"
-                  d="M3 19h18v2H3v-2zm10-5.828L19.071 7.1l1.414 1.414L12 17 3.515 8.515 4.929 7.1 11 13.17V2h2v11.172z" />
-          </svg>
-        </button>
-        <button class="icon-btn rendered__print" aria-label="Print to PDF" role="tooltip"
-                data-microtip-position="bottom-left">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
-            <path fill="none" d="M0 0h24v24H0z" />
-            <path fill="currentColor"
-                  d="M6 19H3a1 1 0 01-1-1V8a1 1 0 011-1h3V3a1 1 0 011-1h10a1 1 0 011 1v4h3a1 1 0 011 1v10a1 1 0 01-1 1h-3v2a1 1 0 01-1 1H7a1 1 0 01-1-1v-2zm0-2v-1a1 1 0 011-1h10a1 1 0 011 1v1h2V9H4v8h2zM8 4v3h8V4H8zm0 13v3h8v-3H8zm-3-7h3v2H5v-2z" />
-          </svg>
-        </button>
-      </header>
       <div id="rendered"></div>
     </section>
-  </div>
+  </main>
   <script type="module" src="/src/main.ts"></script>
 </body>
 

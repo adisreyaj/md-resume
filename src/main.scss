@@ -6,6 +6,18 @@
   box-sizing: border-box;
 }
 
+.header {
+  @apply h-16 flex items-center px-6 justify-between print:hidden border-b;
+  &__controls {
+    @apply flex space-x-4;
+  }
+  &__branding {
+    @apply flex items-center space-x-2;
+    p {
+      @apply text-lg font-bold;
+    }
+  }
+}
 .btn {
   @apply px-4 py-2 bg-pink-600 text-white rounded-md;
 }
@@ -27,10 +39,6 @@
   }
   .rendered {
     @apply relative;
-    & > header {
-      @apply top-0 right-0 absolute p-2 flex justify-end space-x-4;
-      @apply print:hidden;
-    }
   }
 }
 
