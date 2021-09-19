@@ -52,7 +52,7 @@ async function writeToFile({ css, name }) {
     const folderExists = await fs.readdir(FOLDER_TO_WRITE);
   } catch (error) {
     if (error?.code === 'ENOENT') {
-      await fs.mkdir(FOLDER_TO_WRITE);
+      await fs.mkdir(FOLDER_TO_WRITE, { recursive: true });
     }
   }
   try {

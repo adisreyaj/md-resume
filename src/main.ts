@@ -13,6 +13,7 @@ const markdownInput = document.getElementById(
 ) as HTMLTextAreaElement;
 Split(['.app__markdown', '.app__rendered']);
 initEditor(markdownInput);
+addStyles();
 const rendered = document.getElementById('rendered') as HTMLDivElement;
 worker?.addEventListener('message', ({ data }) => {
   rendered.innerHTML = data;
@@ -44,4 +45,12 @@ function debouncedRender(markdown: string) {
 
 function render(markdown: string) {
   worker.postMessage({ markdown });
+}
+
+function addStyles() {
+  const linkElement = document.createElement('link');
+  linkElement.setAttribute('rel', 'stylesheet');
+  linkElement.setAttribute('type', 'text/css');
+  linkElement.setAttribute('href', `styles/themes/default/styles.css`);
+  document.head.appendChild(linkElement);
 }
