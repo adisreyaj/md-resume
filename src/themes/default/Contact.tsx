@@ -5,24 +5,33 @@ const Contact: React.FC<any> = ({ metadata }: { metadata: Metadata }) => {
   return (
     <section className="section contact">
       <h3 className="section__heading">Contact</h3>
-      <div>
-        <ul className="max-w-xs space-y-1 contact__list">
-          <li>
-            <a href="mailto:hi@adi.so">{metadata.email}</a>
-          </li>
-          <li>
-            <a href="tel:0918088886884">{metadata.phone}</a>
-          </li>
-          <li>
-            <a href={metadata.website}>
-              {metadata.website.replace(/^https?\:\/\//i, '')}
-            </a>
-          </li>
-          <li>
-            <p>{metadata.address}</p>
-          </li>
-        </ul>
-      </div>
+      {metadata &&
+        (() => {
+          const { email, phone, address, website } = metadata;
+          return (
+            <div>
+              <ul className="max-w-xs space-y-1 contact__list">
+                <li>
+                  <a href="mailto:hi@adi.so">{email ?? 'hi@adi.so'}</a>
+                </li>
+
+                <li>
+                  <a href="tel:0918088886884">{phone ?? '987654321'}</a>
+                </li>
+
+                <li>
+                  <a href={website}>
+                    {website?.replace(/^https?\:\/\//i, '') ?? 'website'}
+                  </a>
+                </li>
+
+                <li>
+                  <p>{address ?? 'Address'}</p>
+                </li>
+              </ul>
+            </div>
+          );
+        })()}
     </section>
   );
 };

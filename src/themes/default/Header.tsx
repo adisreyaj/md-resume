@@ -11,7 +11,7 @@ const Header: React.FC<any> = ({ metadata }: { metadata: Metadata }) => {
           width="30"
           height="30"
         />
-        <h1 className="text-2xl font-bold">{metadata.name}</h1>
+        <h1 className="text-2xl font-bold">{metadata?.name ?? 'Your Name'}</h1>
       </div>
       <p className="mt-4">
         Full stack developer working with Web technologies. Loves to build

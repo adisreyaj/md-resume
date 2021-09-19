@@ -10,13 +10,14 @@ const Socials: React.FC<any> = ({
       <h3 className="section__heading">Socials</h3>
       <div>
         <ul className="space-y-1 socials__list">
-          {socials.map((social) => (
-            <li>
-              <a className="socials__link" href={social.link}>
-                {social.name}
-              </a>
-            </li>
-          ))}
+          {socials?.length > 0 &&
+            socials.map((social) => (
+              <li>
+                <a className="socials__link" href={social.link}>
+                  {social.name}
+                </a>
+              </li>
+            ))}
         </ul>
       </div>
     </section>

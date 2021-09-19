@@ -13,17 +13,18 @@ const Achievements: React.FC<any> = ({
     >
       <h3 className="section__heading">Achievements</h3>
       <ul className="achievements__list">
-        {achievements.map((item) => (
-          <li>
-            <header>
-              <h4>{item.title}</h4>
-            </header>
-            <div
-              className=""
-              dangerouslySetInnerHTML={{ __html: item.data.join('') }}
-            ></div>
-          </li>
-        ))}
+        {achievements?.length > 0 &&
+          achievements.map((item) => (
+            <li>
+              <header>
+                <h4>{item.title}</h4>
+              </header>
+              <div
+                className=""
+                dangerouslySetInnerHTML={{ __html: item.data.join('') }}
+              ></div>
+            </li>
+          ))}
       </ul>
     </section>
   );

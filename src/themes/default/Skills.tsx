@@ -6,11 +6,12 @@ const Skills: React.FC<any> = ({ skills }: { skills: string[] }) => {
       <h3 className="section__heading">Skills</h3>
       <div>
         <ul className="skills__list">
-          {skills.map((item) => (
-            <li>
-              <p>{item}</p>
-            </li>
-          ))}
+          {skills?.length > 0 &&
+            skills.map((item) => (
+              <li>
+                <p>{item}</p>
+              </li>
+            ))}
         </ul>
       </div>
     </section>
