@@ -6,8 +6,9 @@ const Header: React.FC<any> = ({ metadata }: { metadata: Metadata }) => {
     <header className="mb-10">
       <div className="flex items-center space-x-2">
         <img
-          src="https://adi.so/images/logo-white.svg"
-          alt="Adithya"
+          className="rounded-full"
+          src="https://avatar.tobi.sh/"
+          alt={metadata?.name ?? 'Your Name'}
           width="30"
           height="30"
         />
