@@ -39,6 +39,7 @@
     "remark-frontmatter": "^4.0.0",
     "remark-parse": "^10.0.0",
     "remark-stringify": "^10.0.0",
+    "split.js": "^1.6.4",
     "tailwindcss": "^2.2.15",
     "unified": "^10.1.0",
     "unist-util-find": "^1.0.2",

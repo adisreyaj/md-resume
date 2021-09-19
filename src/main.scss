@@ -9,11 +9,8 @@
 }
 
 .app {
-  @apply grid grid-cols-1;
-  @media screen and (min-width: 1280px) {
-    @apply gap-6;
-    grid-template-columns: 4fr 5fr;
-  }
+  display: flex;
+  flex-direction: row;
   &__markdown {
     footer {
       @apply mt-4 flex justify-center;
@@ -31,4 +28,15 @@
 
 .cm-editor {
   height: calc(100vh - 0px);
+}
+
+.gutter {
+  background-color: #eee;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  cursor: col-resize;
 }
