@@ -1,0 +1,34 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.btn {
+  @apply px-4 py-2 bg-pink-600 text-white rounded-md;
+}
+
+.app {
+  @apply grid grid-cols-1;
+  @media screen and (min-width: 1280px) {
+    @apply gap-6;
+    grid-template-columns: 4fr 5fr;
+  }
+  &__markdown {
+    footer {
+      @apply mt-4 flex justify-center;
+    }
+  }
+  &__rendered {
+    @apply overflow-y-auto relative w-full;
+    height: calc(100vh - 64px);
+  }
+}
+#markdown {
+  @apply w-full;
+  height: calc(100vh - 0px);
+}
+
+.cm-editor {
+  height: calc(100vh - 0px);
+}

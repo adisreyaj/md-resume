@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  @apply text-gray-600;
+}
+
+h1 {
+}
+
+h4,
+.h4 {
+  @apply text-lg font-bold text-gray-800;
+}
+.section {
+  @apply mb-8;
+  &__heading {
+    @apply text-gray-600 uppercase text-base font-semibold mb-2;
+  }
+}
+.experience,
+.education,
+.achievements {
+  &__list {
+    @apply space-y-4;
+    ul {
+      @apply pl-4 mt-2 list-disc;
+    }
+  }
+}
+
+.skills,
+.languages {
+  &__list {
+    @apply flex flex-wrap -mx-1;
+    li {
+      @apply bg-gray-100 border border-gray-200 m-1 px-4 py-0 rounded-md;
+    }
+  }
+}
+.socials {
+  &__link {
+    @apply cursor-pointer relative;
+  }
+  &__link-open {
+    @apply text-gray-500 p-1 pl-0 text-sm;
+  }
+}
+
+a {
+  @apply relative transition-all cursor-pointer duration-300;
+  &::after {
+    content: '↗';
+    @apply absolute transition-all duration-300 h-3 w-3 text-gray-400 -right-4 font-normal;
+  }
+  &:hover {
+    @apply text-gray-800;
+    &::after {
+      @apply text-gray-800;
+    }
+  }
+}
+
+@screen print {
+  @page {
+    margin-top: 0in;
+    margin-bottom: 0in;
+    margin-left: 0in;
+    margin-right: 0in;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    color: black !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  p,
+  li {
+    color: black !important;
+  }
+
+  html {
+    font-size: 12.288px !important;
+  }
+}
+
+@screen sm {
+  html {
+    font-size: calc(
+      13.176471px + (16 - 13.176471) * (100vw - 640px) / (811 - 640)
+    );
+  }
+}
+@screen md {
+  html {
+    font-size: calc(12.288px + (16 - 12.288) * (100vw - 811px) / (1051 - 811));
+  }
+}
+
+@screen lg {
+  html {
+    font-size: 16px;
+  }
+}
