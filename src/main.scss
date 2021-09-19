@@ -1,3 +1,5 @@
+@import 'microtip';
+
 * {
   margin: 0;
   padding: 0;
@@ -15,12 +17,30 @@
     footer {
       @apply mt-4 flex justify-center;
     }
+    @apply print:hidden;
   }
   &__rendered {
     @apply overflow-y-auto relative w-full;
-    height: calc(100vh - 64px);
+    @apply print:overflow-y-visible;
+    height: calc(100vh - 0px);
+    @apply print:h-full;
+  }
+  .rendered {
+    @apply relative;
+    & > header {
+      @apply top-0 right-0 absolute p-2 flex justify-end space-x-4;
+      @apply print:hidden;
+    }
   }
 }
+
+#rendered {
+  @apply print:absolute print:top-0 print:left-0 print:w-full;
+  @media print {
+    width: calc(100vw - 32px);
+  }
+}
+
 #markdown {
   @apply w-full;
   height: calc(100vh - 0px);
@@ -39,4 +59,9 @@
 .gutter.gutter-horizontal {
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
   cursor: col-resize;
+}
+
+.icon-btn {
+  @apply bg-gray-100 border border-gray-200 w-10 h-10 rounded-md grid place-items-center text-black;
+  @apply hover:bg-gray-200;
 }

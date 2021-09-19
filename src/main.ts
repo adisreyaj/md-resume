@@ -11,14 +11,23 @@ const worker = new Worker();
 const markdownInput = document.getElementById(
   'markdown'
 ) as HTMLTextAreaElement;
+const print = document.querySelector('.rendered__print');
 Split(['.app__markdown', '.app__rendered']);
 initEditor(markdownInput);
-addStyles();
+fetchStylesForSelectedTheme('default').then((css) => {
+  const style = document.createElement('style');
+  style.innerHTML = css;
+  style.setAttribute('type', 'text/css');
+  document.head.appendChild(style);
+});
 const rendered = document.getElementById('rendered') as HTMLDivElement;
 worker?.addEventListener('message', ({ data }) => {
   rendered.innerHTML = data;
 });
 
+print?.addEventListener('click', () => {
+  window.print();
+});
 function initEditor(attachTo: HTMLElement) {
   return new EditorView({
     state: EditorState.create({
@@ -47,10 +56,14 @@ function render(markdown: string) {
   worker.postMessage({ markdown });
 }
 
-function addStyles() {
-  const linkElement = document.createElement('link');
-  linkElement.setAttribute('rel', 'stylesheet');
-  linkElement.setAttribute('type', 'text/css');
-  linkElement.setAttribute('href', `styles/themes/default/styles.css`);
-  document.head.appendChild(linkElement);
+async function fetchStylesForSelectedTheme(theme: string) {
+  try {
+    const css = await fetch(`/styles/themes/${theme}/styles.css`).then((res) =>
+      res.text()
+    );
+    return css;
+  } catch (error) {
+    console.error(error);
+    throw new Error('');
+  }
 }
