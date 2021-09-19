@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "serve": "vite preview"
+    "serve": "vite preview",
+    "postbuild": "node scripts/build-theme-styles.js"
   },
   "devDependencies": {
     "@types/babel__core": "^7.1.16",
