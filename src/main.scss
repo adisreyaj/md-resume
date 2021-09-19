@@ -34,8 +34,8 @@
   &__rendered {
     @apply overflow-y-auto relative w-full;
     @apply print:overflow-y-visible;
-    height: calc(100vh - 0px);
     @apply print:h-full;
+    height: calc(100vh - 64px);
   }
   .rendered {
     @apply relative;
@@ -51,11 +51,11 @@
 
 #markdown {
   @apply w-full;
-  height: calc(100vh - 0px);
+  height: calc(100vh - 64px);
 }
 
 .cm-editor {
-  height: calc(100vh - 0px);
+  height: calc(100vh - 64px);
 }
 
 .gutter {
