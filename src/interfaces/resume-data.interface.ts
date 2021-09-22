@@ -3,7 +3,7 @@ export interface ResumeData {
   education: Education[];
   work: Work[];
   projects: Project[];
-  skills: string[];
+  skills: Skill[];
   languages: string[];
   achievements: Achievements[];
   socials: { name: string; link: string }[];
@@ -43,4 +43,9 @@ export interface Work {
   location: string;
   technologies: string[];
   data: string[];
+}
+
+export interface Skill {
+  skill: string;
+  proficiency: string;
 }

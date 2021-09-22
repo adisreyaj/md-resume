@@ -9,12 +9,16 @@ export const parseSkills: Plugin<any[], Root, string> =
       type: 'containerDirective',
       name: 'skills',
     };
-
     const skillsNode = find(tree, skills);
     if (skillsNode) {
       const { children } = skillsNode;
       const skills = children[0].children.reduce((acc: any, curr: any) => {
-        return [...acc, curr.children[0].children[0].value];
+        const skillValue = curr.children[0].children[0].value;
+        if (skillValue) {
+          const [skill, proficiency] = skillValue.split('::');
+          return [...acc, { skill, proficiency }];
+        }
+        return acc;
       }, []);
       const data = file.data;
       data.skills = skills;
