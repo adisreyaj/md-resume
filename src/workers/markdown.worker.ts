@@ -36,8 +36,6 @@ addEventListener('message', async ({ data }) => {
     .process(data.markdown);
 
   const parsed = tree.data as any as ResumeData;
-  const renderedString = ReactDOMServer.renderToStaticMarkup(
-    Main({ data: parsed }) as any
-  );
+  const renderedString = ReactDOMServer.renderToStaticMarkup(Main({ data: parsed }) as any);
   postMessage(renderedString);
 });

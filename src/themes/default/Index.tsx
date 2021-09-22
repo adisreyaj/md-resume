@@ -13,16 +13,7 @@ export const Main: React.FC<{ data: ResumeData | null }> = ({ data }) => {
   if (!data) {
     throw new Error('Data not provided');
   }
-  const {
-    metadata,
-    education,
-    work,
-    skills,
-    languages,
-    projects,
-    achievements,
-    socials,
-  } = data;
+  const { metadata, education, work, skills, languages, projects, achievements, socials } = data;
   return (
     <section className="max-w-5xl p-4 pt-24 mx-auto print:max-w-a4 print:p-10">
       <Header metadata={metadata} />

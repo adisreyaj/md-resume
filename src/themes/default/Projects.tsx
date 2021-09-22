@@ -1,7 +1,7 @@
 import React from 'react';
 import { Project } from '../../interfaces/resume-data.interface';
 
-const Projects: React.FC<any> = ({ projects }: { projects: Project[] }) => {
+const Projects: React.FC<{ projects: Project[] }> = ({ projects }) => {
   return (
     <section>
       <h3 className="section__heading">Projects</h3>

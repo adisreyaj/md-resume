@@ -1,7 +1,7 @@
 import React from 'react';
 import { Skill } from '../../interfaces/resume-data.interface';
 
-const Skills: React.FC<any> = ({ skills }: { skills: Skill[] }) => {
+const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
   return (
     <section className="section skills">
       <h3 className="section__heading">Skills</h3>

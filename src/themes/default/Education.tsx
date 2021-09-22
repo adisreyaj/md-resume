@@ -1,11 +1,7 @@
 import React from 'react';
 import { Education } from '../../interfaces/resume-data.interface';
 
-const Education: React.FC<any> = ({
-  education,
-}: {
-  education: Education[];
-}) => {
+const Education: React.FC<{ education: Education[] }> = ({ education }) => {
   return (
     <section className="section education">
       <h3 className="section__heading">Education</h3>

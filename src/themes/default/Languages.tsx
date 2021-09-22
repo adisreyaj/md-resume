@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Languages: React.FC<any> = ({ languages }: { languages: string[] }) => {
+const Languages: React.FC<{ languages: string[] }> = ({ languages }) => {
   return (
     <section className="section languages">
       <h3 className="section__heading">Languages</h3>

@@ -8,9 +8,7 @@ import './main.scss';
 import Worker from './workers/markdown.worker?worker';
 
 const worker = new Worker();
-const markdownInput = document.getElementById(
-  'markdown'
-) as HTMLTextAreaElement;
+const markdownInput = document.getElementById('markdown') as HTMLTextAreaElement;
 const print = document.querySelector('.rendered__print');
 Split(['.app__markdown', '.app__rendered']);
 initEditor(markdownInput);
@@ -58,9 +56,7 @@ function render(markdown: string) {
 
 async function fetchStylesForSelectedTheme(theme: string) {
   try {
-    const css = await fetch(`/styles/themes/${theme}/styles.css`).then((res) =>
-      res.text()
-    );
+    const css = await fetch(`/styles/themes/${theme}/styles.css`).then((res) => res.text());
     return css;
   } catch (error) {
     console.error(error);

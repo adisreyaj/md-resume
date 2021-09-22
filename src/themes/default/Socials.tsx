@@ -1,10 +1,6 @@
 import React from 'react';
 
-const Socials: React.FC<any> = ({
-  socials,
-}: {
-  socials: { name: string; link: string }[];
-}) => {
+const Socials: React.FC<{ socials: { name: string; link: string }[] }> = ({ socials }) => {
   return (
     <section className="section socials">
       <h3 className="section__heading">Socials</h3>
