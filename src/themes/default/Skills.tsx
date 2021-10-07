@@ -9,12 +9,10 @@ const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
         <ul className="skills__list">
           {skills?.length > 0 &&
             skills.map((item) => (
-              <li>
+              <li key={item.skill}>
                 <p>
                   {item.skill}
-                  {item.proficiency && (
-                    <span className="text-sm"> ({item.proficiency})</span>
-                  )}
+                  {item.proficiency && <span className="text-sm"> ({item.proficiency})</span>}
                 </p>
               </li>
             ))}

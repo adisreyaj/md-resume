@@ -9,7 +9,7 @@ const Work: React.FC<{ work: Work[] }> = ({ work }) => {
         {work?.length > 0 &&
           work.map((item) => {
             return (
-              <li className="p-2">
+              <li className="p-2" key={item.company}>
                 <header className="text-sm text-gray-600">
                   <div>
                     <h4 className="mb-1">{item.company}</h4>

@@ -8,7 +8,7 @@ const Languages: React.FC<{ languages: string[] }> = ({ languages }) => {
         <ul className="languages__list">
           {languages?.length > 0 &&
             languages.map((item) => (
-              <li>
+              <li key={item}>
                 <p>{item}</p>
               </li>
             ))}

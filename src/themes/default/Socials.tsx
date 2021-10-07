@@ -8,7 +8,7 @@ const Socials: React.FC<{ socials: { name: string; link: string }[] }> = ({ soci
         <ul className="space-y-1 socials__list">
           {socials?.length > 0 &&
             socials.map((social) => (
-              <li>
+              <li key={social.name}>
                 <a className="socials__link" href={social.link}>
                   {social.name}
                 </a>

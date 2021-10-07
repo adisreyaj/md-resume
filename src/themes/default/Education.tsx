@@ -8,7 +8,7 @@ const Education: React.FC<{ education: Education[] }> = ({ education }) => {
       <ul className="education__list">
         {education?.length > 0 &&
           education.map((item) => (
-            <li>
+            <li key={item.name}>
               <header>
                 <h4>{item.name}</h4>
               </header>

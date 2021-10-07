@@ -32,6 +32,7 @@ export interface Metadata {
   website: string;
   phone: string;
   address: string;
+  description: string;
 }
 
 export interface Work {
