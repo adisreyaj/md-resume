@@ -77,9 +77,22 @@
   .new-page {
     page-break-after: always;
   }
-}
-@media print {
   .gutter {
     display: none !important;
+  }
+}
+@media print {
+  @page {
+    margin-top: 5mm;
+    margin-bottom: 5mm;
+  }
+  html,
+  body {
+    width: 210mm;
+    /* height: 297mm; */
+    height: 282mm;
+    font-size: 11px;
+    background: #fff;
+    overflow: visible;
   }
 }
