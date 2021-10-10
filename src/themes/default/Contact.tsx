@@ -1,7 +1,7 @@
 import React from 'react';
 import { Metadata } from '../../interfaces/resume-data.interface';
 
-const Contact: React.FC<any> = ({ metadata }: { metadata: Metadata }) => {
+const Contact: React.FC<{ metadata: Metadata }> = ({ metadata }) => {
   return (
     <section className="section contact">
       <h3 className="section__heading">Contact</h3>
@@ -20,9 +20,7 @@ const Contact: React.FC<any> = ({ metadata }: { metadata: Metadata }) => {
                 </li>
 
                 <li>
-                  <a href={website}>
-                    {website?.replace(/^https?\:\/\//i, '') ?? 'website'}
-                  </a>
+                  <a href={website}>{website?.replace(/(^\w+:|^)\/\//, '') ?? 'website'}</a>
                 </li>
 
                 <li>

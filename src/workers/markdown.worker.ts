@@ -5,15 +5,15 @@ import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { unified } from 'unified';
 import { ResumeData } from '../interfaces/resume-data.interface';
+import { parseAchievements } from '../parsers/achievements.parser';
+import { parseEducation } from '../parsers/education.parser';
+import { parseLanguages } from '../parsers/languages.parser';
+import { parseMeta } from '../parsers/metadata.parser';
+import { parseProjects } from '../parsers/projects.parser';
+import { parseSkills } from '../parsers/skills.parser';
+import { parseSocials } from '../parsers/socials.parser';
+import { parseWork } from '../parsers/work.parser';
 import { Main } from '../themes/default/Index';
-import { parseAchievements } from '../utils/parse-achievements.util';
-import { parseEducation } from '../utils/parse-education.util';
-import { parseLanguages } from '../utils/parse-languages.util';
-import { parseMeta } from '../utils/parse-metadata.util';
-import { parseProjects } from '../utils/parse-projects.util';
-import { parseSkills } from '../utils/parse-skills.util';
-import { parseSocials } from '../utils/parse-socials.util';
-import { parseWork } from '../utils/parse-work.util';
 
 addEventListener('message', async ({ data }) => {
   const tree = await unified()
@@ -36,8 +36,6 @@ addEventListener('message', async ({ data }) => {
     .process(data.markdown);
 
   const parsed = tree.data as any as ResumeData;
-  const renderedString = ReactDOMServer.renderToStaticMarkup(
-    Main({ data: parsed }) as any
-  );
+  const renderedString = ReactDOMServer.renderToStaticMarkup(Main({ data: parsed }) as any);
   postMessage(renderedString);
 });

@@ -1,18 +1,14 @@
 import React from 'react';
 import { Education } from '../../interfaces/resume-data.interface';
 
-const Education: React.FC<any> = ({
-  education,
-}: {
-  education: Education[];
-}) => {
+const Education: React.FC<{ education: Education[] }> = ({ education }) => {
   return (
     <section className="section education">
       <h3 className="section__heading">Education</h3>
       <ul className="education__list">
         {education?.length > 0 &&
           education.map((item) => (
-            <li>
+            <li key={item.name}>
               <header>
                 <h4>{item.name}</h4>
               </header>

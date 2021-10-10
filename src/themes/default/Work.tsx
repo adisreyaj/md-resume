@@ -1,7 +1,7 @@
 import React from 'react';
 import { Work } from '../../interfaces/resume-data.interface';
 
-const Work: React.FC<any> = ({ work }: { work: Work[] }) => {
+const Work: React.FC<{ work: Work[] }> = ({ work }) => {
   return (
     <section className="section experience">
       <h3 className="section__heading">Experience</h3>
@@ -9,7 +9,7 @@ const Work: React.FC<any> = ({ work }: { work: Work[] }) => {
         {work?.length > 0 &&
           work.map((item) => {
             return (
-              <li className="p-2">
+              <li className="p-2" key={item.company}>
                 <header className="text-sm text-gray-600">
                   <div>
                     <h4 className="mb-1">{item.company}</h4>
@@ -18,8 +18,7 @@ const Work: React.FC<any> = ({ work }: { work: Work[] }) => {
                     <p className="font-semibold">{item.role}</p>
                     <p>/</p>
                     <p>
-                      {item.startYear} -{' '}
-                      {item.present ? 'Present' : item.endYear}
+                      {item.startYear} - {item.present ? 'Present' : item.endYear}
                     </p>
                   </div>
                   <div>
