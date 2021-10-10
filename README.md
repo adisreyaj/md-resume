@@ -11,13 +11,11 @@
     Create PDF and HTML versions of resume by authoring in Markdown.
     <br />
     <br />
-    <a href="https://compito.adi.so">View Demo</a>
+    <a href="https://md-resume.adi.so">View Demo</a>
     ·
-    <a href="https://github.com/adisreyaj/compito/issues">Report Bug</a>
+    <a href="https://github.com/adisreyaj/md-resume/issues">Report Bug</a>
     ·
-    <a href="https://github.com/adisreyaj/compito/issues">Request Feature</a>
-    ·
-    <a href="https://blog.sreyaj.dev/compito-project-management-app-angular-nestjs-auth0">Blog</a>
+    <a href="https://github.com/adisreyaj/md-resume/issues">Request Feature</a>
   </p>
 
   <p align="center">
