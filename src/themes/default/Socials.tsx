@@ -1,10 +1,6 @@
 import React from 'react';
 
-const Socials: React.FC<any> = ({
-  socials,
-}: {
-  socials: { name: string; link: string }[];
-}) => {
+const Socials: React.FC<{ socials: { name: string; link: string }[] }> = ({ socials }) => {
   return (
     <section className="section socials">
       <h3 className="section__heading">Socials</h3>
@@ -12,7 +8,7 @@ const Socials: React.FC<any> = ({
         <ul className="space-y-1 socials__list">
           {socials?.length > 0 &&
             socials.map((social) => (
-              <li>
+              <li key={social.name}>
                 <a className="socials__link" href={social.link}>
                   {social.name}
                 </a>

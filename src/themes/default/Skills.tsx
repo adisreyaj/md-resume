@@ -1,6 +1,7 @@
 import React from 'react';
+import { Skill } from '../../interfaces/resume-data.interface';
 
-const Skills: React.FC<any> = ({ skills }: { skills: string[] }) => {
+const Skills: React.FC<{ skills: Skill[] }> = ({ skills }) => {
   return (
     <section className="section skills">
       <h3 className="section__heading">Skills</h3>
@@ -8,8 +9,11 @@ const Skills: React.FC<any> = ({ skills }: { skills: string[] }) => {
         <ul className="skills__list">
           {skills?.length > 0 &&
             skills.map((item) => (
-              <li>
-                <p>{item}</p>
+              <li key={item.skill}>
+                <p>
+                  {item.skill}
+                  {item.proficiency && <span className="text-sm"> ({item.proficiency})</span>}
+                </p>
               </li>
             ))}
         </ul>

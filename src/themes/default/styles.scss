@@ -21,6 +21,7 @@ h4,
 }
 .section {
   @apply mb-8;
+  page-break-inside: avoid;
   &__heading {
     @apply text-gray-600 uppercase text-base font-semibold mb-2;
   }
@@ -97,9 +98,7 @@ a {
 
 @screen sm {
   html {
-    font-size: calc(
-      13.176471px + (16 - 13.176471) * (100vw - 640px) / (811 - 640)
-    );
+    font-size: calc(13.176471px + (16 - 13.176471) * (100vw - 640px) / (811 - 640));
   }
 }
 @screen md {

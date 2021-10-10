@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Languages: React.FC<any> = ({ languages }: { languages: string[] }) => {
+const Languages: React.FC<{ languages: string[] }> = ({ languages }) => {
   return (
     <section className="section languages">
       <h3 className="section__heading">Languages</h3>
@@ -8,7 +8,7 @@ const Languages: React.FC<any> = ({ languages }: { languages: string[] }) => {
         <ul className="languages__list">
           {languages?.length > 0 &&
             languages.map((item) => (
-              <li>
+              <li key={item}>
                 <p>{item}</p>
               </li>
             ))}

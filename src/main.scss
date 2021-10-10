@@ -73,3 +73,26 @@
   @apply bg-gray-100 border border-gray-200 w-10 h-10 rounded-md grid place-items-center text-black;
   @apply hover:bg-gray-200;
 }
+@media print {
+  .new-page {
+    page-break-after: always;
+  }
+  .gutter {
+    display: none !important;
+  }
+}
+@media print {
+  @page {
+    size: A4;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    font-size: 12px;
+    background: #fff;
+    overflow: visible;
+  }
+}
