@@ -26,11 +26,13 @@
   </p>
 </p>
 
-![MD Resume](/public/images/mdresume.jpg 'Compito Project Management')
+![MD Resume](/public/images/mdresume.jpg 'MD Resume')
 
 Write your resume in markdown and easily get the PDF and HTML. Keep your resumes up to date with ease. Write your resume one time and just update as and when needed. Don't go through the hassle of creating a resume every time.
 
 ## Features
+
+![MD Resume](/public/images/resume-html.png 'MD Resume')
 
 ✅ Super simple to use.
 
