@@ -5,7 +5,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",
-    "prebuild": "node scripts/build-theme-styles.js",
+    "build:themes": "node scripts/build-theme-styles.js",
     "lint": "eslint ./src --ext .ts,.tsx"
   },
   "devDependencies": {
