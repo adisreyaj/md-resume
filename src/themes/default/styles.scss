@@ -55,7 +55,7 @@ h4,
   }
 }
 
-a {
+a:not(.no-arrow) {
   @apply relative transition-all cursor-pointer duration-300;
   &::after {
     content: '↗';
