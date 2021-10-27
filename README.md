@@ -45,7 +45,7 @@ You can download the resume as a single HTML file with inlined styles. Just push
 ## Under the hood
 
   <p align="center">
-  <img src="public/images/stack.png" />
+  <img src="https://cardify.vercel.app/api/badges?border=false&borderColor=%23ddd&borderWidth=2&iconColor=&icons=typescript%2Cmarkdown%2Ctailwindcss%2Ccodemirror%2Cvite%2Creact&preset=young-passion&shadow=true&width=100" />
   </p>
 
 🔸 The main application is written in **TypeScript** without using any frameworks. **Vite** takes care of bundling.
